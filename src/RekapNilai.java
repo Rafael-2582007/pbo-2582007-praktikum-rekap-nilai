@@ -29,5 +29,26 @@ public class RekapNilai {
                 break;
             }
 
+            if (nilai < 0 || nilai > 100) {
+                System.out.println("nilai harus 0-100");
+                continue;
+            }
+
+            char grade;
+
+            if (nilai >= 60) {
+                grade = 'D';
+            } else if (nilai >= 90) {
+                grade = 'A';
+            } else if (nilai >= 80) {
+                grade = 'B';
+            } else if (nilai >= 70) {
+                grade = 'C';
+            } else {
+                grade = 'E';
+            }
+
+
+
         }
 }
