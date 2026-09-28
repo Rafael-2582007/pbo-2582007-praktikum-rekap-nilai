@@ -47,6 +47,9 @@ public class RekapNilai {
             } else {
                 grade = 'E';
             }
+            //sebelumnya yang D itu di atas, untuk mengetes apa yang terjadi jika menginput nilai 85
+            //ternyata akan terjadi kurang baik
+            //hal ini dapat terjadi karna program dibaca dari atas
 
             String keterangan = switch (grade) {
                 case 'A' -> "Sangat Baik";
