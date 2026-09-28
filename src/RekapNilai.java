@@ -48,7 +48,40 @@ public class RekapNilai {
                 grade = 'E';
             }
 
+            String keterangan = switch (grade) {
+                case 'A' -> "Sangat Baik";
+                case 'B' -> "Baik";
+                case 'C' -> "Cukup";
+                case 'D' -> "Kurang";
+                default -> "Tidak Lulus";
+            };
 
+            System.out.println("  Grade " + grade + " — " + keterangan);
+
+            total += nilai;
+            nomor++;
+
+        } while (nilai != SELESAI);
+
+        int sah = nomor - 1;
+
+        System.out.println();
+
+        // Jika langsung -1, tidak ada nilai sah sehingga tidak boleh membagi dengan nol.
+        if (sah == 0) {
+            System.out.println("Belum ada nilai yang dimasukkan.");
+            return;
+        }
+
+        double rata = total / sah;
+        String status = rata >= 60 ? "LULUS" : "TIDAK LULUS";
+
+        System.out.println("Nilai sah   : " + sah);
+        System.out.println("Rata-rata   : "
+                + String.format(Locale.forLanguageTag("id-ID"), "%.2f", rata));
+        System.out.println("Status      : " + status);
+    }
+}
 
         }
 }
